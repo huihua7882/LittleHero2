@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwie21fa1cqw"]
+
+[ext_resource type="Theme" uid="uid://b1bbott1b53v8" path="res://UI/Theme/game_theme.tres" id="1_guol3"]
+[ext_resource type="Script" path="res://UI/About/about_game.gd" id="2_dg8n1"]
+
+[node name="AboutGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_guol3")
+script = ExtResource("2_dg8n1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -20.0
+offset_right = 36.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Label1" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "作者:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "吖华"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "素材:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "itch.io"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "音效:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "www.kenney.nl"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "音乐:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "sonatina.itch.io"
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "配音:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "2noise ChatTTS"
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "测试:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 1, 0.901961, 1)
+text = "凯凯 婷婷"
+vertical_alignment = 1
+
+[node name="BtnBack" type="Button" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 42.0
+offset_bottom = 37.0
+text = "返回"

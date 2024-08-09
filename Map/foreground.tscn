@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwacra4lumgu"]
+
+[ext_resource type="Texture2D" uid="uid://bmjl18ei870jo" path="res://Assets/Background/Tussock.png" id="1_cyqhq"]
+
+[node name="Foreground" type="ParallaxBackground"]
+layer = 2
+
+[node name="Tussock" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.2, 0)
+motion_mirroring = Vector2(480, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tussock"]
+position = Vector2(-54, -16)
+texture = ExtResource("1_cyqhq")
+centered = false

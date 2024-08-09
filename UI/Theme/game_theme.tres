@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://b1bbott1b53v8"]
+
+[ext_resource type="Texture2D" uid="uid://dnlagwpcu7q2t" path="res://Assets/HUD/Base-01.png" id="1_xavs0"]
+[ext_resource type="FontFile" uid="uid://yr1y7hvk4byx" path="res://Assets/Font/SmileySans-Oblique.ttf" id="1_yc7wq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xp0a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5l7h4"]
+texture = ExtResource("1_xavs0")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(94, 14, 20, 20)
+
+[resource]
+default_font = ExtResource("1_yc7wq")
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxEmpty_7xp0a")
+Button/styles/focus = SubResource("StyleBoxTexture_5l7h4")
+Button/styles/hover = SubResource("StyleBoxEmpty_7xp0a")
+Button/styles/normal = SubResource("StyleBoxEmpty_7xp0a")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 3

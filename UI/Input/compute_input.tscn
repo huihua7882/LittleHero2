@@ -1,0 +1,174 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5sny1eal37a"]
+
+[ext_resource type="Script" path="res://UI/Input/compute_input.gd" id="1_3c5qy"]
+[ext_resource type="Theme" uid="uid://b1bbott1b53v8" path="res://UI/Theme/game_theme.tres" id="2_7ny6t"]
+
+[node name="ComputeInput" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 216.0
+theme = ExtResource("2_7ny6t")
+script = ExtResource("1_3c5qy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnEscape" type="Button" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "逃跑"
+
+[node name="Count1" type="Label" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_7ny6t")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Compute" type="Label" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("2_7ny6t")
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count2" type="Label" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("2_7ny6t")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+alignment = 1
+max_length = 9
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="VBoxContainer1/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Number1" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "1"
+
+[node name="Number2" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "2"
+
+[node name="Number3" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "3"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Number4" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "4"
+
+[node name="Number5" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "5"
+
+[node name="Number6" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "6"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Number7" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "7"
+
+[node name="Number8" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "8"
+
+[node name="Number9" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer1/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7ny6t")
+text = "9"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer1/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Delete" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7ny6t")
+text = "删除"
+
+[node name="Number0" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7ny6t")
+text = "0"
+
+[node name="Confirm" type="Button" parent="VBoxContainer1/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7ny6t")
+text = "确认"

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4gi0unb413pl"]
+
+[ext_resource type="Theme" uid="uid://b1bbott1b53v8" path="res://UI/Theme/game_theme.tres" id="1_41bk1"]
+[ext_resource type="Script" path="res://UI/GameOver/game_over.gd" id="2_xkfgn"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_41bk1")
+script = ExtResource("2_xkfgn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="BtnBack" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 42.0
+offset_bottom = 37.0
+text = "返回标题"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

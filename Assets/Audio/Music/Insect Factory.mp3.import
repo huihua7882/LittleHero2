@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blxvrplrq1l0b"
+path="res://.godot/imported/Insect Factory.mp3-737efb06b52ac17932c0c8e859dd3f41.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Insect Factory.mp3"
+dest_files=["res://.godot/imported/Insect Factory.mp3-737efb06b52ac17932c0c8e859dd3f41.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

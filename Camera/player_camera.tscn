@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://pm4rme3fsxnq"]
+
+[ext_resource type="Script" path="res://Camera/player_camera.gd" id="1_n2wvh"]
+
+[node name="PlayerCamera" type="Camera2D"]
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("1_n2wvh")

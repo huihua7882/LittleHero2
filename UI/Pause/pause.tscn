@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://vka1vybjys1m"]
+
+[ext_resource type="Theme" uid="uid://b1bbott1b53v8" path="res://UI/Theme/game_theme.tres" id="1_ycg6b"]
+[ext_resource type="PackedScene" uid="uid://dc05fgasrsph3" path="res://UI/Setting/volume_slider.tscn" id="2_4r401"]
+[ext_resource type="Script" path="res://UI/Pause/pause.gd" id="2_rxof2"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ycg6b")
+script = ExtResource("2_rxof2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "暂停"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label1" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "主音量"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider1" parent="VBoxContainer/GridContainer" instance=ExtResource("2_4r401")]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "音乐"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider2" parent="VBoxContainer/GridContainer" instance=ExtResource("2_4r401")]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+bus = &"BGM"
+
+[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "音效"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider3" parent="VBoxContainer/GridContainer" instance=ExtResource("2_4r401")]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+bus = &"SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnContinue" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "继续游戏"
+
+[node name="BtnTitle" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "回到标题"

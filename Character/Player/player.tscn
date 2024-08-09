@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://uoysworw32lg"]
+
+[ext_resource type="Script" path="res://Character/Player/player.gd" id="1_es71c"]
+[ext_resource type="PackedScene" uid="uid://d0lc8le4kygxx" path="res://Core/state_machine.tscn" id="2_n4bp6"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_es71c")
+
+[node name="StateMachine" parent="." instance=ExtResource("2_n4bp6")]
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

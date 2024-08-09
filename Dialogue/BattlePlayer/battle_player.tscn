@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2exfw02j0mfr"]
+
+[ext_resource type="PackedScene" uid="uid://clvqbp3rlfg40" path="res://Dialogue/dialogue_base.tscn" id="1_vi1px"]
+[ext_resource type="Script" path="res://Dialogue/BattlePlayer/battle_player_engine.gd" id="2_qmahg"]
+
+[node name="BattlePlayer" instance=ExtResource("1_vi1px")]
+dialogue_gdscript = ExtResource("2_qmahg")

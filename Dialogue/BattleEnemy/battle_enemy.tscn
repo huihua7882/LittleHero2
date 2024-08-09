@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqg4jv66chowu"]
+
+[ext_resource type="PackedScene" uid="uid://clvqbp3rlfg40" path="res://Dialogue/dialogue_base.tscn" id="1_ggsq1"]
+[ext_resource type="Script" path="res://Dialogue/BattleEnemy/battle_enemy_engine.gd" id="3_0ypie"]
+
+[node name="BattleEnemy" instance=ExtResource("1_ggsq1")]
+dialogue_gdscript = ExtResource("3_0ypie")
