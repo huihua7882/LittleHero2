@@ -1,29 +1,30 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://b1bbott1b53v8"]
 
-[ext_resource type="Texture2D" uid="uid://dnlagwpcu7q2t" path="res://Assets/HUD/Base-01.png" id="1_xavs0"]
-[ext_resource type="FontFile" uid="uid://yr1y7hvk4byx" path="res://Assets/Font/SmileySans-Oblique.ttf" id="1_yc7wq"]
+[ext_resource type="Texture2D" uid="uid://dnlagwpcu7q2t" path="res://Assets/HUD/Base-01.png" id="1_fl0i7"]
+[ext_resource type="FontFile" uid="uid://yr1y7hvk4byx" path="res://Assets/Font/SmileySans-Oblique.ttf" id="1_q5n2n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xp0a"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftp1c"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5l7h4"]
-texture = ExtResource("1_xavs0")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqyb8"]
+texture = ExtResource("1_fl0i7")
 texture_margin_left = 3.0
 texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
-region_rect = Rect2(94, 14, 20, 20)
+region_rect = Rect2(323, 203, 26, 26)
 
 [resource]
-default_font = ExtResource("1_yc7wq")
+default_font = ExtResource("1_q5n2n")
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 4
-Button/styles/disabled = SubResource("StyleBoxEmpty_7xp0a")
-Button/styles/focus = SubResource("StyleBoxTexture_5l7h4")
-Button/styles/hover = SubResource("StyleBoxEmpty_7xp0a")
-Button/styles/normal = SubResource("StyleBoxEmpty_7xp0a")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ftp1c")
+Button/styles/focus = SubResource("StyleBoxTexture_sqyb8")
+Button/styles/hover = SubResource("StyleBoxEmpty_ftp1c")
+Button/styles/normal = SubResource("StyleBoxEmpty_ftp1c")
+Button/styles/pressed = SubResource("StyleBoxEmpty_ftp1c")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 3
