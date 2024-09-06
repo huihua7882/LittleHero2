@@ -6,4 +6,5 @@ func _setup() -> void:
 	# add_text_entry("你好，[b]少侠[/b]，欢迎来到游戏世界。") # 加粗
 	# add_text_entry("你好，[i]少侠[/i]，欢迎来到游戏世界。") # 倾斜
 	# add_text_entry("你好，[color=#FF0000]少侠[/color]，欢迎来到游戏世界。") # 改变字体颜色
-	add_text_entry("。。。").set_metadata(Game.AUTHOR, "旁白")
+	# add_text_entry("。。。").set_metadata(Game.AUTHOR, "旁白")
+	pass

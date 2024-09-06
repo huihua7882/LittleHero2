@@ -688,6 +688,3 @@ libraries = {
 "": SubResource("AnimationLibrary_8bcrc")
 }
 autoplay = "idle"
-
-[node name="Statistic" parent="." index="6"]
-max_health = 6000

@@ -17,6 +17,7 @@ func _ready() -> void:
 	camera = PLAYER_CAMERA.instantiate()
 	player.add_child(camera)
 	add_child(player)
+	player.owner = owner
 	player.set_collision_layer_value(Game.layer_player, true)
 	player.set_collision_layer_value(Game.layer_enemy, false)
 	#hit_box.hit.connect(func (hurt_box : HurtBox):

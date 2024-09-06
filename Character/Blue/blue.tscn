@@ -928,15 +928,18 @@ disabled = true
 position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_b4bh0")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_cexrf")
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_pjs6h")
 }
 autoplay = "idle"
 
-[node name="HealthBar" parent="." index="7"]
+[node name="Statistic" parent="." index="6"]
+max_health = 900
+
+[node name="HealthBar" parent="." index="8"]
 position = Vector2(0, -2)

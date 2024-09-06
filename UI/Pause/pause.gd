@@ -13,10 +13,17 @@ func _ready() -> void:
 	btn_title.pressed.connect(func ():
 		Game.change_scene_title()
 	)
+	visibility_changed.connect(func ():
+		get_tree().paused = visible
+	)
+
 	hide()
-	set_process_input(false)
-	SoundManager.setup_ui_sounds(btn_continue)
+	#set_process_input(false)
+	SoundManager.setup_ui_sounds(self)
 
 func show_pause() -> void:
 	show()
-	set_process_input(true)
+	#set_process_input(true)
+
+#func _input(event: InputEvent) -> void:
+	#pass

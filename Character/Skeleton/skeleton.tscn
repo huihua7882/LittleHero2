@@ -655,15 +655,15 @@ disabled = true
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_cj2ku")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_5bh2b")
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_4gbvi")
 }
 autoplay = "idle"
 
-[node name="Statistic" parent="." index="4"]
-max_health = 15000
+[node name="Statistic" parent="." index="6"]
+max_health = 300

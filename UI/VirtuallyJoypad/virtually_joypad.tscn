@@ -1,19 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceeprrl1l5n3w"]
+[gd_scene load_steps=15 format=3 uid="uid://ceeprrl1l5n3w"]
 
 [ext_resource type="Script" path="res://UI/VirtuallyJoypad/rocker.gd" id="1_mjx77"]
 [ext_resource type="Texture2D" uid="uid://dnlagwpcu7q2t" path="res://Assets/HUD/Base-01.png" id="2_petnj"]
+[ext_resource type="Texture2D" uid="uid://1j2o0bew2hdi" path="res://Assets/Key/gdb-switch-2.png" id="3_iyibj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlu30"]
 atlas = ExtResource("2_petnj")
 region = Rect2(374, 6, 52, 52)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pmjag"]
-atlas = ExtResource("2_petnj")
-region = Rect2(189, 205, 22, 22)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1raqh"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(17, 225, 14, 14)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gq4a"]
-atlas = ExtResource("2_petnj")
-region = Rect2(189, 109, 22, 22)
+[sub_resource type="AtlasTexture" id="AtlasTexture_77xmq"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(65, 226, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d24yn"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(17, 209, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilh4k"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(65, 210, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3gum"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(17, 241, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l72f6"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(65, 242, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ufcf"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(17, 257, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lsgl"]
+atlas = ExtResource("3_iyibj")
+region = Rect2(65, 258, 14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ffak"]
 atlas = ExtResource("2_petnj")
@@ -42,6 +67,7 @@ offset_bottom = -46.0
 grow_vertical = 0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Rocker"]
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(-26, -26)
 texture_normal = SubResource("AtlasTexture_nlu30")
 visibility_mode = 1
@@ -62,78 +88,46 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="TouchScreenButton1" type="TouchScreenButton" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(11, -11)
-texture_normal = SubResource("AtlasTexture_pmjag")
-texture_pressed = SubResource("AtlasTexture_4gq4a")
+scale = Vector2(1.6, 1.6)
+texture_normal = SubResource("AtlasTexture_1raqh")
+texture_pressed = SubResource("AtlasTexture_77xmq")
 action = "attack"
 visibility_mode = 1
 
-[node name="Label" type="Label" parent="Buttons/TouchScreenButton1"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "A"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(-11, 11)
-texture_normal = SubResource("AtlasTexture_pmjag")
-texture_pressed = SubResource("AtlasTexture_4gq4a")
+scale = Vector2(1.6, 1.6)
+texture_normal = SubResource("AtlasTexture_d24yn")
+texture_pressed = SubResource("AtlasTexture_ilh4k")
 action = "ui_accept"
 visibility_mode = 1
 
-[node name="Label" type="Label" parent="Buttons/TouchScreenButton2"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "B"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(-33, -11)
-texture_normal = SubResource("AtlasTexture_pmjag")
-texture_pressed = SubResource("AtlasTexture_4gq4a")
+scale = Vector2(1.6, 1.6)
+texture_normal = SubResource("AtlasTexture_o3gum")
+texture_pressed = SubResource("AtlasTexture_l72f6")
 action = "dialogue"
 visibility_mode = 1
 
-[node name="Label" type="Label" parent="Buttons/TouchScreenButton3"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Y"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Buttons"]
-visible = false
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(-11, -33)
-texture_normal = SubResource("AtlasTexture_pmjag")
-texture_pressed = SubResource("AtlasTexture_4gq4a")
+scale = Vector2(1.6, 1.6)
+texture_normal = SubResource("AtlasTexture_2ufcf")
+texture_pressed = SubResource("AtlasTexture_1lsgl")
 visibility_mode = 1
-
-[node name="Label" type="Label" parent="Buttons/TouchScreenButton4"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Pause" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Pause"]
+modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(9, 9)
 texture_normal = SubResource("AtlasTexture_4ffak")
 shape = SubResource("CircleShape2D_7m8cw")

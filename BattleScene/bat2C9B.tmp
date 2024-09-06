@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvbrsnl0eoyri"]
+[gd_scene load_steps=10 format=4 uid="uid://bp35b1kedlvlc"]
 
-[ext_resource type="Script" path="res://Map/world.gd" id="1_lxfeo"]
-[ext_resource type="PackedScene" uid="uid://cluviy54xbvar" path="res://Map/background_2.tscn" id="2_t5pj8"]
-[ext_resource type="Texture2D" uid="uid://wuofuc7rffl" path="res://Assets/Tile/oak_woods_tileset.png" id="3_034bv"]
-[ext_resource type="PackedScene" uid="uid://clvqbp3rlfg40" path="res://Dialogue/dialogue_base.tscn" id="4_7gx6e"]
-[ext_resource type="PackedScene" uid="uid://ceeprrl1l5n3w" path="res://UI/VirtuallyJoypad/virtually_joypad.tscn" id="6_0wr86"]
-[ext_resource type="PackedScene" uid="uid://vka1vybjys1m" path="res://UI/Pause/pause.tscn" id="9_h6xd2"]
+[ext_resource type="Script" path="res://BattleScene/battle_scene.gd" id="1_817kq"]
+[ext_resource type="PackedScene" uid="uid://cluviy54xbvar" path="res://Map/background_2.tscn" id="2_3qvqo"]
+[ext_resource type="Texture2D" uid="uid://wuofuc7rffl" path="res://Assets/Tile/oak_woods_tileset.png" id="3_jxkkk"]
+[ext_resource type="PackedScene" uid="uid://b2exfw02j0mfr" path="res://Dialogue/BattlePlayer/battle_player.tscn" id="5_0ktgf"]
+[ext_resource type="PackedScene" uid="uid://d0lc8le4kygxx" path="res://Core/state_machine.tscn" id="5_4vifh"]
+[ext_resource type="PackedScene" uid="uid://cqg4jv66chowu" path="res://Dialogue/BattleEnemy/battle_enemy.tscn" id="6_70u4w"]
+[ext_resource type="PackedScene" uid="uid://x5sny1eal37a" path="res://UI/Input/compute_input.tscn" id="6_veeoo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gju48"]
-texture = ExtResource("3_034bv")
+texture = ExtResource("3_jxkkk")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -70,39 +71,34 @@ terrain_set_0/terrain_0/name = "地面"
 terrain_set_0/terrain_0/color = Color(2.16588e-07, 0.460245, 0.275195, 1)
 sources/1 = SubResource("TileSetAtlasSource_gju48")
 
-[node name="World" type="Node2D"]
-script = ExtResource("1_lxfeo")
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_817kq")
 
-[node name="Background2" parent="." instance=ExtResource("2_t5pj8")]
+[node name="Background2" parent="." instance=ExtResource("2_3qvqo")]
 
 [node name="TileMap2" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAApAAoAAQABAAUAAAApAAkAAQABAAAAAAAoAAoAAQABAAUAAAAoAAkAAQABAAAAAAAnAAoAAQABAAUAAAAnAAkAAQABAAAAAAAmAAoAAQABAAUAAAAmAAkAAQABAAAAAAAlAAoAAQABAAUAAAAlAAkAAQABAAAAAAAkAAoAAQABAAUAAAAkAAkAAQABAAAAAAAjAAoAAQABAAUAAAAjAAkAAQABAAAAAAAiAAoAAQABAAUAAAAiAAkAAQABAAAAAAAhAAoAAQABAAUAAAAhAAkAAQABAAAAAAAgAAoAAQABAAUAAAAgAAkAAQABAAAAAAAfAAoAAQABAAUAAAAfAAkAAQABAAAAAAAeAAoAAQABAAUAAAAeAAkAAQABAAAAAAAdAAoAAQABAAUAAAAdAAkAAQABAAAAAAAcAAoAAQABAAUAAAAcAAkAAQABAAAAAAAbAAoAAQABAAUAAAAbAAkAAQABAAAAAAAaAAoAAQABAAUAAAAaAAkAAQABAAAAAAAZAAoAAQABAAUAAAAZAAkAAQABAAAAAAAYAAoAAQABAAUAAAAYAAkAAQABAAAAAAAXAAoAAQABAAUAAAAXAAkAAQABAAAAAAAWAAoAAQABAAUAAAAWAAkAAQABAAAAAAAVAAoAAQABAAUAAAAVAAkAAQABAAAAAAAUAAoAAQABAAUAAAAUAAkAAQABAAAAAAATAAoAAQABAAUAAAATAAkAAQABAAAAAAASAAoAAQABAAUAAAASAAkAAQABAAAAAAARAAoAAQABAAUAAAARAAkAAQABAAAAAAAQAAoAAQABAAUAAAAQAAkAAQABAAAAAAAPAAoAAQABAAUAAAAPAAkAAQABAAAAAAAOAAoAAQABAAUAAAAOAAkAAQABAAAAAAANAAoAAQABAAUAAAANAAkAAQABAAAAAAAMAAoAAQABAAUAAAAMAAkAAQABAAAAAAALAAoAAQABAAUAAAALAAkAAQABAAAAAAAKAAoAAQABAAUAAAAKAAkAAQABAAAAAAAJAAoAAQABAAUAAAAJAAkAAQABAAAAAAAIAAoAAQABAAUAAAAIAAkAAQABAAAAAAAHAAoAAQABAAUAAAAHAAkAAQABAAAAAAAGAAoAAQABAAUAAAAGAAkAAQABAAAAAAAFAAoAAQABAAUAAAAFAAkAAQABAAAAAAAEAAoAAQABAAUAAAAEAAkAAQABAAAAAAADAAoAAQABAAUAAAADAAkAAQABAAAAAAACAAoAAQABAAUAAAACAAkAAQABAAAAAAABAAoAAQABAAUAAAABAAkAAQABAAAAAAAAAAoAAQABAAUAAAAAAAkAAQABAAAAAAD//woAAQABAAUAAAD//wkAAQABAAAAAAD+/woAAQABAAUAAAD+/wkAAQABAAAAAAD9/woAAQABAAUAAAD9/wkAAQABAAAAAAD8/woAAQABAAUAAAD8/wkAAQABAAAAAAD7/woAAQABAAUAAAD7/wkAAQABAAAAAAD6/woAAQABAAUAAAD6/wkAAQABAAAAAAD5/woAAQABAAUAAAD5/wkAAQABAAAAAAD4/woAAQABAAUAAAD4/wkAAQABAAAAAAD3/woAAQABAAUAAAD3/wkAAQABAAAAAAD2/woAAQABAAUAAAD2/wkAAQABAAAAAAD1/woAAQABAAUAAAD1/wkAAQABAAAAAAD0/woAAQABAAUAAAD0/wkAAQABAAAAAADz/woAAQABAAUAAADz/wkAAQABAAEAAADz/wgAAQABAAEAAADz/wcAAQABAAEAAADz/wYAAQABAAEAAADz/wUAAQABAAEAAADz/wQAAQABAAEAAADz/wMAAQABAAEAAADz/wIAAQABAAEAAADz/wEAAQABAAEAAADz/wAAAQABAAAAAADy/woAAQAAAAUAAADy/wkAAQAAAAEAAADy/wgAAQAAAAEAAADy/wcAAQAAAAEAAADy/wYAAQAAAAEAAADy/wUAAQAAAAEAAADy/wQAAQAAAAEAAADy/wMAAQAAAAEAAADy/wIAAQAAAAEAAADy/wEAAQAAAAEAAADy/wAAAQAAAAAAAABCAAoAAQABAAUAAABCAAkAAQABAAEAAABBAAoAAQABAAUAAABBAAkAAQABAAAAAABAAAoAAQABAAUAAABAAAkAAQABAAAAAAA/AAoAAQABAAUAAAA/AAkAAQABAAAAAAA+AAoAAQABAAUAAAA+AAkAAQABAAAAAAA9AAoAAQABAAUAAAA9AAkAAQABAAAAAAA8AAoAAQABAAUAAAA8AAkAAQABAAAAAAA7AAoAAQABAAUAAAA7AAkAAQABAAAAAAA6AAoAAQABAAUAAAA6AAkAAQABAAAAAAA5AAoAAQABAAUAAAA5AAkAAQABAAAAAAA4AAoAAQABAAUAAAA4AAkAAQABAAAAAAA3AAoAAQABAAUAAAA3AAkAAQABAAAAAAA2AAoAAQABAAUAAAA2AAkAAQABAAAAAAA1AAoAAQABAAUAAAA1AAkAAQABAAAAAAA0AAoAAQABAAUAAAA0AAkAAQABAAAAAAAzAAoAAQABAAUAAAAzAAkAAQABAAAAAAAyAAoAAQABAAUAAAAyAAkAAQABAAAAAAAxAAoAAQABAAUAAAAxAAkAAQABAAAAAAAwAAoAAQABAAUAAAAwAAkAAQABAAAAAAAvAAoAAQABAAUAAAAvAAkAAQABAAAAAAAuAAoAAQABAAUAAAAuAAkAAQABAAAAAAAtAAoAAQABAAUAAAAtAAkAAQABAAAAAAAsAAoAAQABAAUAAAAsAAkAAQABAAAAAAArAAoAAQABAAUAAAArAAkAAQABAAAAAAAqAAoAAQABAAUAAAAqAAkAAQABAAAAAABDAAoAAQAFAAUAAABDAAkAAQAFAAEAAABDAAgAAQAFAAEAAABDAAcAAQAFAAEAAABDAAYAAQAFAAEAAABDAAUAAQAFAAEAAABDAAQAAQAFAAEAAABDAAMAAQAFAAEAAABDAAIAAQAFAAEAAABDAAEAAQAFAAEAAABDAAAAAQAFAAAAAABCAAgAAQABAAEAAABCAAcAAQABAAEAAABCAAYAAQABAAEAAABCAAUAAQABAAEAAABCAAQAAQABAAEAAABCAAMAAQABAAEAAABCAAIAAQABAAEAAABCAAEAAQABAAEAAABCAAAAAQABAAAAAAA=")
 tile_set = SubResource("TileSet_m5l5b")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-114, 125)
+[node name="PlayerMarker" type="Marker2D" parent="."]
+position = Vector2(147, 124)
 
-[node name="Marker2D1" type="Marker2D" parent="."]
-position = Vector2(222, 124)
+[node name="EnemyMarker" type="Marker2D" parent="."]
+position = Vector2(389, 125)
 
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(428, 123)
-
-[node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(641, 118)
-
-[node name="Marker2D4" type="Marker2D" parent="."]
-position = Vector2(847, 119)
+[node name="StateMachine" parent="." instance=ExtResource("5_4vifh")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
+layer = 2
 
-[node name="VirtuallyJoypad" parent="CanvasLayer" instance=ExtResource("6_0wr86")]
-
-[node name="DialogueBase" parent="CanvasLayer" instance=ExtResource("4_7gx6e")]
+[node name="BattleEnemy" parent="CanvasLayer" instance=ExtResource("6_70u4w")]
 visible = false
 offset_top = -60.0
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("9_h6xd2")]
+[node name="BattlePlayer" parent="CanvasLayer" instance=ExtResource("5_0ktgf")]
+visible = false
+offset_top = -60.0
+
+[node name="ComputeInput" parent="CanvasLayer" instance=ExtResource("6_veeoo")]
 visible = false

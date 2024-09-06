@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvbrsnl0eoyri"]
+
+[ext_resource type="Script" path="res://Map/world.gd" id="1_lxfeo"]
+[ext_resource type="PackedScene" uid="uid://cluviy54xbvar" path="res://Map/background_2.tscn" id="2_t5pj8"]
+[ext_resource type="PackedScene" uid="uid://cwc25dwvs5bqp" path="res://Map/tile_map_2.tscn" id="3_2hdnf"]
+[ext_resource type="PackedScene" uid="uid://clvqbp3rlfg40" path="res://Dialogue/dialogue_base.tscn" id="4_7gx6e"]
+[ext_resource type="PackedScene" uid="uid://ceeprrl1l5n3w" path="res://UI/VirtuallyJoypad/virtually_joypad.tscn" id="6_0wr86"]
+[ext_resource type="PackedScene" uid="uid://vka1vybjys1m" path="res://UI/Pause/pause.tscn" id="9_h6xd2"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_lxfeo")
+
+[node name="Background2" parent="." instance=ExtResource("2_t5pj8")]
+
+[node name="TileMap2" parent="." instance=ExtResource("3_2hdnf")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-114, 125)
+
+[node name="Marker2D1" type="Marker2D" parent="."]
+position = Vector2(222, 124)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(428, 123)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(641, 118)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(847, 119)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="DialogueBase" parent="CanvasLayer" instance=ExtResource("4_7gx6e")]
+visible = false
+offset_top = -60.0
+
+[node name="VirtuallyJoypad" parent="CanvasLayer" instance=ExtResource("6_0wr86")]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("9_h6xd2")]
+visible = false

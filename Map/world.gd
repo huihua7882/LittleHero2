@@ -4,7 +4,7 @@ extends Node2D
 
 const PLAYER = preload("res://Character/Player/player.tscn")
 
-@onready var tile_map: TileMap = $TileMap
+@onready var tile_map_2: TileMapLayer = $TileMap2
 @onready var pause: Pause = $CanvasLayer/Pause
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var marker_2d_1: Marker2D = $Marker2D1
@@ -22,7 +22,7 @@ func _ready() -> void:
 	if Game.player_position == Vector2.ZERO:
 		Game.player_position = marker_2d.global_position
 	player.player.global_position = Game.player_position
-	player.camera.set_map(tile_map)
+	player.camera.set_map(tile_map_2)
 	for key : String in Game.enemys.keys():
 		var item : Dictionary = Game.enemys[key]
 		var enemmy := item[Game.RESOURCE].instantiate() as Character
@@ -42,6 +42,7 @@ func _ready() -> void:
 			)
 			enemmy.check_player.body_exited.connect(func (body: Node):
 				enemmy.key_anim.hide()
+				dialogue_base.dialogue_gdscript = null
 			)
 			item[Game.PLAYER] = player.PLAYER
 			enemmy.hurt_box.hurt.connect(func (hit_box : Area2D):
@@ -55,7 +56,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		pause.show_pause()
 	elif event.is_action_pressed("dialogue"):
-		dialogue_base.show_doalogue()
+		if dialogue_base:
+			get_window().set_input_as_handled()
+			dialogue_base.show_doalogue()
 
 func is_victory() -> bool:
 	var victory : bool = true

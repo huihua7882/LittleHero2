@@ -5,28 +5,31 @@
 [ext_resource type="Script" path="res://Dialogue/dialogue_engine_base.gd" id="3_25a0e"]
 
 [node name="DialogueBase" type="Control"]
-custom_minimum_size = Vector2(0, 60)
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("1_qx58a")
-script = ExtResource("2_o6ydc")
-dialogue_gdscript = ExtResource("3_25a0e")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qx58a")
+script = ExtResource("2_o6ydc")
+dialogue_gdscript = ExtResource("3_25a0e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.705882)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,20 +41,25 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 0.470588, 0, 1)
 theme_override_font_sizes/font_size = 12
-text = "作者:"
 horizontal_alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 12
-text = "欢迎"
 visible_characters_behavior = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/HBoxContainer/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0

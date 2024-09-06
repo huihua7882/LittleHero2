@@ -12,7 +12,7 @@ enum State {
 	ATTACK_ENEMY,
 }
 
-@onready var tile_map: TileMap = $TileMap
+@onready var tile_map_2: TileMapLayer = $TileMap2
 @onready var player_marker: Marker2D = $PlayerMarker
 @onready var enemy_marker: Marker2D = $EnemyMarker
 @onready var compute_input: ComputeInput = $CanvasLayer/ComputeInput
@@ -49,7 +49,7 @@ func set_data(params := {}) -> void:
 	camera = PLAYER_CAMERA.instantiate()
 	player.add_child(camera)
 	add_child(player)
-	camera.set_map(tile_map)
+	camera.set_map(tile_map_2)
 	# Log.d(name, "player %s" % player)
 	player.global_position = player_marker.global_position
 	player.direction = Vector2(1, 0)
@@ -74,13 +74,13 @@ func get_next_state(state : State) -> State:
 				if player.is_death() and player.is_death_anim_end():
 					Game.change_scene_game_over()
 					Game.change_scene_game_over({Game.TITLE:"你被魔王打败了\n还需要继续努力修行\n请少侠重新来过吧!!!"})
-				else:
+				elif not enemy.is_death():
 					return State.PLAYER_INPUT
 		State.ATTACK_PLAYER:
 			if player.is_attack_end():
 				if enemy.is_death() and enemy.is_death_anim_end():
 					Game.change_scene_main({Game.DEATH_OBJ:enemy_obj.resource_path})
-				else:
+				elif not enemy.is_death():
 					return State.PLAYER_INPUT
 		State.ENEMY_TALK:
 			if not battle_enemy.visible:
@@ -134,4 +134,3 @@ func on_state_end(state : State, delta: float) -> void:
 	match state:
 		State.IDLE:
 			pass
-

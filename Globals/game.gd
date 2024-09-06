@@ -76,7 +76,9 @@ func change_scene_setting(params := {}) -> void:
 	var tree : SceneTree = await change_scene("res://UI/Setting/setting.tscn")
 
 func change_scene_battle(params := {}) -> void:
-	var tree : SceneTree = await change_scene("res://Map/BattleScene/battle_scene.tscn")
+	var tree : SceneTree = await change_scene("res://BattleScene/battle_scene.tscn")
+	if Game.PLAYER in params:
+		Log.d(name, "player %s" % params[Game.PLAYER])
 	tree.current_scene.set_data(params)
 
 func change_scene_about_game(params := {}) -> void:
@@ -102,6 +104,12 @@ func change_scene_main(params := {}) -> void:
 			var item : Dictionary = enemys[key]
 			if params[DEATH_OBJ] == item[RESOURCE].resource_path:
 				item[Game.DEATH] = true
+
+func save_player() -> void:
+	pass
+
+func restore_main() -> void:
+	pass
 
 func change_scene(path: String) -> SceneTree:
 	var tree : SceneTree = get_tree()

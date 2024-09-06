@@ -5,7 +5,7 @@ extends Camera2D
 func _ready() -> void:
 	pass
 
-func set_map(tile_map : TileMap) -> void:
+func set_map(tile_map : TileMapLayer) -> void:
 	Log.d(name, "set_map")
 	if not is_node_ready():
 		await ready

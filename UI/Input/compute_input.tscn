@@ -5,9 +5,12 @@
 
 [node name="ComputeInput" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 192.0
-offset_bottom = 216.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -120.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_7ny6t")
 script = ExtResource("1_3c5qy")
 
